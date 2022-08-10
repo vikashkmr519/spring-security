@@ -10,6 +10,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 
 
 
@@ -35,13 +37,14 @@ public class MyCustAuthProvider implements AuthenticationProvider{
 		
 		String username = authentication.getName();
 		String password = authentication.getCredentials().toString();
+		System.out.println(password);
 		//get the user from database
 		UserDetails user = userDetailsService.loadUserByUsername(username);
 		
 		//check user is not null, then whether the user retrieved password, matches the above password
 		if(user != null && passwordEncoder.matches(password,user.getPassword())) {
 			
-			return new UsernamePasswordAuthenticationToken(user,password);
+			return new UsernamePasswordAuthenticationToken(user.getUsername(),password);
 		}
 		
 		return  (Authentication) new BadCredentialsException("Error !!");
