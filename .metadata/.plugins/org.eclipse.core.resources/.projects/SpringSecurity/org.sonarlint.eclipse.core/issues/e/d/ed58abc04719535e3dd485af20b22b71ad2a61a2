@@ -1,0 +1,18 @@
+
+„	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¥©‚’HRMINORZ
+CODE_SMELL
+_
+java:S1948"%Make "emp" transient or serializable.(ðÛ¨Ûÿÿÿÿÿ8Íš³ž¨0H$RCRITICALZ
+CODE_SMELL
+h
+java:S1135,"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ8Íš³ž¨0H%RINFOZ
+CODE_SMELL
+h
+java:S11352"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ8Íš³ž¨0H&RINFOZ
+CODE_SMELL
+h
+java:S11358"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ8Íš³ž¨0H'RINFOZ
+CODE_SMELL
+h
+java:S1135>"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ8Íš³ž¨0H(RINFOZ
+CODE_SMELL

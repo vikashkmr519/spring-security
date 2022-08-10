@@ -1,0 +1,38 @@
+package com.vikash.springSecurity.config;
+
+import javax.sql.DataSource;
+
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
+
+import com.vikash.springSecurity.service.LoginUserDetailsService;
+
+@SpringBootConfiguration
+public class SecurityConfig {
+
+	@Bean
+	public UserDetailsService userDetailsService() {
+		return new JdbcUserDetailsManager();
+
+	}
+
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return NoOpPasswordEncoder.getInstance();
+	}
+
+	@Bean
+	public DataSource dataSource() {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource("jdbc:mysql://localhost/springSecurity",
+				"root", "Sysofni@1021");
+		return dataSource;
+	}
+}

@@ -1,0 +1,16 @@
+
+m
+java:S1874";Remove this use of "NoOpPasswordEncoder"; it is deprecated.(å‰ö8‚í³¨0HRMINORZ
+CODE_SMELL
+„	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ºĞÁ‘HRMINORZ
+CODE_SMELL
+‚
+java:S1128"ORemove this unused import 'org.springframework.security.core.userdetails.User'.(–Ä€8´¤Ç¨0HœRMINORZ
+CODE_SMELL
+‰
+java:S1128"VRemove this unused import 'org.springframework.security.core.userdetails.UserDetails'.(ÊÁ¥8´¤Ç¨0HRMINORZ
+CODE_SMELL
+™
+java:S1128
+"aRemove this unused import 'org.springframework.security.provisioning.InMemoryUserDetailsManager'.(îŒúùÿÿÿÿ8´¤Ç¨0H RMINORZ
+CODE_SMELL

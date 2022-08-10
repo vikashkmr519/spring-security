@@ -1,0 +1,7 @@
+
+‰	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñÒş›úÿÿÿÿHRMINORZ
+CODE_SMELL
+x
+java:S3655"LCall "empOpt.isPresent()" or "!empOpt.isEmpty()" before accessing the value.(÷œ±‹8´¤Ç¨0HšRMAJORZBUG
+[
+java:S2201"/The return value of "orElseThrow" must be used.(ÀúÑ8´¤Ç¨0H›RMAJORZBUG

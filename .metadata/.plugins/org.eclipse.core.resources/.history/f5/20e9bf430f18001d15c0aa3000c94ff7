@@ -1,0 +1,5 @@
+package com.vikash.springSecurity.service;
+
+public class LoginUserDetailsService {
+
+}
