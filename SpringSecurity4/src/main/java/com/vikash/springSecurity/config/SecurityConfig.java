@@ -2,6 +2,7 @@ package com.vikash.springSecurity.config;
 
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
@@ -9,7 +10,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @SpringBootConfiguration
-public class SecurityConfig {
+public class SecurityConfig  {
+	
+
 	
 	@Bean
 	public UserDetailsService userDetailsService() {
@@ -26,4 +29,9 @@ public class SecurityConfig {
 		return NoOpPasswordEncoder.getInstance();
 	}
 
+
+	
+
+
+	
 }
