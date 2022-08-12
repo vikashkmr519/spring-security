@@ -6,13 +6,13 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
 
-import com.vikash.springSecurity.provider.MyAuthenticationProvider;
+import com.vikash.springSecurity.provider.UserPasswordProvider;
 
 @Component
 public class MyAuthenticationManager implements AuthenticationManager {
 	
 	@Autowired
-	MyAuthenticationProvider provider;
+	UserPasswordProvider provider;
 
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
