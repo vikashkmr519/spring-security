@@ -11,8 +11,6 @@ r
 Bsrc/main/java/com/vikash/springSecurity/config/SecurityConfig.java,d/4/d4cb5f3daddd3f06e3e6399d7e23e91dd7830c30
 n
 >src/main/java/com/vikash/springSecurity/repo/EmployeeRepo.java,9/c/9caeb27f4f9bcaf8238f2e2d601a14ccf47119bc
-R
-"src/main/resources/application.yml,a/6/a6d8b8556fee0e03112ce2bf34b8cb27a7dc9e58
 Y
 )src/main/resources/application.properties,0/6/06f65155ec73600b9fc5c4dc2883d4bb84d8e284
 7

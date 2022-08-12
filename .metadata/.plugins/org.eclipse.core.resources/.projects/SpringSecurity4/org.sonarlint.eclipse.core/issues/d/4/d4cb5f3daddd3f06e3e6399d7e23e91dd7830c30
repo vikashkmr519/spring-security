@@ -1,9 +1,0 @@
-
-Ö	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(∫–¡ëHòRMINORZ
-CODE_SMELL
-g
-java:S1874";Remove this use of "NoOpPasswordEncoder"; it is deprecated.(ÂâêˆHóRMINORZ
-CODE_SMELL
-≠
-java:S1128"zRemove this unused import 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter'.(öé©¿8âê≈®0H≈RMINORZ
-CODE_SMELL
