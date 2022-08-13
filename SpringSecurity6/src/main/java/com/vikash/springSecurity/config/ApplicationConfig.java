@@ -14,8 +14,10 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
+import com.vikash.springSecurity.filter.ReceiptAuthFilter;
 import com.vikash.springSecurity.filter.UserPasswordAuthFilter;
-import com.vikash.springSecurity.provider.OTPAuthProvider;
+import com.vikash.springSecurity.provider.ReceiptAuthProvider;
+import com.vikash.springSecurity.provider.SecretKeyAuthProvider;
 import com.vikash.springSecurity.provider.UserPasswordProvider;
 
 @SpringBootConfiguration
@@ -28,22 +30,29 @@ public class ApplicationConfig  extends WebSecurityConfigurerAdapter{
 	UserPasswordProvider provider;
 	
 	@Autowired
-	OTPAuthProvider authProvider;
+	ReceiptAuthProvider receiptProvider;
 	
 	@Autowired
-	UserPasswordAuthFilter filter;
+	ReceiptAuthFilter receiptFilter;
+	
+	@Autowired
+	SecretKeyAuthProvider authProvider;
+	
+	@Autowired
+	UserPasswordAuthFilter authFilter;
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.authenticationProvider(provider);
 		auth.authenticationProvider(authProvider);
+		auth.authenticationProvider(receiptProvider);
 	}
 
 
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.addFilterAt(filter,BasicAuthenticationFilter.class);
+		http.addFilterAt(authFilter,BasicAuthenticationFilter.class).addFilterBefore(receiptFilter, BasicAuthenticationFilter.class);
 		http.authorizeRequests().anyRequest().authenticated();
 	}
 

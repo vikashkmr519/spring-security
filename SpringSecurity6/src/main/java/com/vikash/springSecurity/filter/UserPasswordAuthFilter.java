@@ -1,7 +1,6 @@
 package com.vikash.springSecurity.filter;
 
 import java.io.IOException;
-import java.util.Random;
 import java.util.UUID;
 
 import javax.servlet.FilterChain;
@@ -17,9 +16,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.vikash.springSecurity.auth.OTPAuthToken;
+import com.vikash.springSecurity.auth.SecretKeyAuthToken;
 import com.vikash.springSecurity.auth.UsernamePasswordAuthToken;
 import com.vikash.springSecurity.model.UserSecretKey;
+import com.vikash.springSecurity.repo.ReceiptManager;
 import com.vikash.springSecurity.repo.UserSecretKeyRepo;
 
 @Component
@@ -37,6 +37,9 @@ public class UserPasswordAuthFilter extends OncePerRequestFilter {
 	
 	@Autowired
 	UserSecretKeyRepo secretKeyRepo;
+	
+	@Autowired
+	ReceiptManager receiptManager;
 	
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
@@ -67,10 +70,16 @@ public class UserPasswordAuthFilter extends OncePerRequestFilter {
 			secretKeyRepo.save(secretKey);
 			
 		}else {
-			var keyObject = new OTPAuthToken(username,password);
+			var keyObject = new SecretKeyAuthToken(username,key);
 			 auth = manager.authenticate(keyObject);
+			 
+			 //here imagine the Authorization key has been sent to database
+			 //here we have stored in a Set
+			String authToken = findRandonKey();
+			receiptManager.add(authToken);
 			
-			response.setHeader("Authorization", findRandonKey());
+			//yaha se yeh token user ko bhi bhej diya
+			response.setHeader("Authorization", authToken);
 
 		}
 		
@@ -94,7 +103,7 @@ public class UserPasswordAuthFilter extends OncePerRequestFilter {
 	@Override
 	protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
 		
-		return !request.getServletPath().equals("/home");
+		return !request.getServletPath().equals("/login");
 	}
 	
 	
