@@ -83,10 +83,11 @@ public class UserPasswordAuthFilter extends OncePerRequestFilter {
 
 		}
 		
-		if(auth.isAuthenticated()) {
-			SecurityContextHolder.getContext().setAuthentication(auth);
-			filterChain.doFilter(request, response);
-		}
+		
+//		if(auth.isAuthenticated()) {
+//			SecurityContextHolder.getContext().setAuthentication(auth);
+//			filterChain.doFilter(request, response);
+//		}
 				
 		
 	}

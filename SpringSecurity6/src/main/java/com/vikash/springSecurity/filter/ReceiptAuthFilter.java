@@ -20,7 +20,8 @@ public class ReceiptAuthFilter extends OncePerRequestFilter{
 
 	
 	@Autowired
-	private MyAuthenticationManager authenticationManager;
+	private ReceiptAuthManager authenticationManager;
+	
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
