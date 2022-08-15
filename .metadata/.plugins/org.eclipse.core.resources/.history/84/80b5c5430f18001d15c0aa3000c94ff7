@@ -1,5 +1,0 @@
-package com.vikash.springSecurity.repo;
-
-public interface EmployeeRepo {
-
-}
