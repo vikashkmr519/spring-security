@@ -41,6 +41,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		.secret("secret3")
 		.scopes("read")
 		.authorizedGrantTypes("client_credentials");
+		//refresh token
 		
 
 		
